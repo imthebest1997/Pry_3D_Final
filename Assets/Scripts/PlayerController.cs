@@ -35,9 +35,17 @@ public class PlayerController : MonoBehaviour
         moveDirection.Normalize();
         moveDirection *= moveSpeed;
         moveDirection.y = y;
+
+        if (characterController.isGrounded && z < 0)
+        {
+            z = -2f;
+        }
+
+
         //Salto
         if (characterController.isGrounded)
         {
+//            moveDirection.y = 0f;
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 moveDirection.y = jumpForce;
