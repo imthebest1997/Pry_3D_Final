@@ -16,13 +16,7 @@ public class PlayerController : MonoBehaviour
 
 
     private Vector3 moveDirection;
-
-    private void Start()
-    {
-        print(Physics.gravity.y);
-        print(moveDirection.y);
-    }
-
+    
     void Update()
     {
         float y = moveDirection.y;
@@ -45,8 +39,6 @@ public class PlayerController : MonoBehaviour
         //Salto
         if (characterController.isGrounded)
         {
-//            print(moveDirection.y);
-//            moveDirection.y = 0f;
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 moveDirection.y = jumpForce;
@@ -69,4 +61,5 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
         animator.SetBool("Grounded", characterController.isGrounded);
     }
+
 }
