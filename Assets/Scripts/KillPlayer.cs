@@ -9,15 +9,7 @@ public class KillPlayer : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            Debug.Log("You died");
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("You died Collision");
+            GameManager.instace.Respawn();
         }
     }
 }
