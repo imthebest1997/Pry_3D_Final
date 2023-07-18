@@ -11,7 +11,8 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.instace.SetSpawnPoint(transform.position);
+            AudioManager.instance.PlaySfx(AudioManager.instance.sfxSource[3]);
+            GameManager.instance.SetSpawnPoint(transform.position);
 
            //TODO: Guardar todos los checkpoints en la escena (Temporal)
            Checkpoint[] allCp = FindObjectsOfType<Checkpoint>();

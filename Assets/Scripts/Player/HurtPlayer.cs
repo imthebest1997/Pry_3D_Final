@@ -8,6 +8,7 @@ public class HurtPlayer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.instance.PlaySfx(AudioManager.instance.sfxSource[2]);
             HealthManager.instance.Hurt();
         }
     }

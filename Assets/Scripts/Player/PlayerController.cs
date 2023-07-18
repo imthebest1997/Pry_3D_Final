@@ -27,13 +27,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float knockBackCounter;
     [SerializeField] Vector2 knockBackPower = new(-3,10);
 
+    //Partes del Robot
+    public GameObject[] playerPieces;
+
+    public bool stopMove;
+
     private void Awake()
     {
         instance = this;
     }
     void Update()
     {
-        if (!isKnocking)
+        if (!isKnocking && !stopMove)
         {
             isGrounded = characterController.isGrounded;
             if (isGrounded && velocity.y < 0)
@@ -79,6 +84,12 @@ public class PlayerController : MonoBehaviour
             {
                 isKnocking = false;
             }
+        }
+
+        if(stopMove)
+        {
+            moveDirection = Vector3.zero;
+            velocity = Vector3.zero;
         }
 
         animator.SetFloat("Speed", Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
