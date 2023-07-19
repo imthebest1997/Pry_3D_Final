@@ -5726,6 +5726,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa4f4878789abd48aa1ba1e39fc284f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _componentIndexCache: 0
+  _addedNetworkObject: {fileID: 0}
+  _networkObjectCache: {fileID: 0}
+  walkingSpeed: 7.5
+  runningSpeed: 11.5
+  jumpSpeed: 8
+  lookSpeed: 2
+  lookXLimit: 45
+  canMove: 1
+  cameraYOffset: 0.4
   characterController: {fileID: 2719954788227068799}
   speed: 7
   jumpHeight: 2

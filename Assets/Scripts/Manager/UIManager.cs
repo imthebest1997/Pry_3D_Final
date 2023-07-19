@@ -54,10 +54,10 @@ public class UIManager : MonoBehaviour
 
     public void Quit()
     {
-        if (UnityEditor.EditorApplication.isPlaying)
+/*        if (UnityEditor.EditorApplication.isPlaying)
             UnityEditor.EditorApplication.isPlaying = false;
         else
-            Application.Quit();
+*/            Application.Quit();
     }
 
     public void MainMenu()

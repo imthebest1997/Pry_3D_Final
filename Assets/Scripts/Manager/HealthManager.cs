@@ -30,16 +30,20 @@ public class HealthManager : MonoBehaviour
             invencibilityCounter -= Time.deltaTime;
         }
 
-        //Activar y desactivar el personaje
-        foreach (GameObject piece in PlayerController.instance.playerPieces)
+        if(PlayerController.instance != null)
         {
-            if(Mathf.Floor(invencibilityCounter * 5f) % 2 == 0)
-                piece.SetActive(true);
-            else
-                piece.SetActive(false);
+            //Activar y desactivar el personaje
+            foreach (GameObject piece in PlayerController.instance.playerPieces)
+            {
+                if (Mathf.Floor(invencibilityCounter * 5f) % 2 == 0)
+                    piece.SetActive(true);
+                else
+                    piece.SetActive(false);
 
-            if (invencibilityCounter <= 0)
-                piece.SetActive(true);
+                if (invencibilityCounter <= 0)
+                    piece.SetActive(true);
+            }
+
         }
     }
 
