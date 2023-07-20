@@ -2754,7 +2754,7 @@ Transform:
   m_GameObject: {fileID: 8066205481377063656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3870110284239940252}
@@ -2802,7 +2802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 3091979592100283429}
   speed: 7
-  jumpHeight: 2
+  jumpHeight: 3
   animator: {fileID: 8207111340398415024}
   playerModel: {fileID: 2880746657032543139}
   rotateSpeed: 5

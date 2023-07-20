@@ -1,20 +1,20 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class CinemachineController : MonoBehaviour
 {
     public CinemachineFreeLook cinemachineFreeLook;
+    public bool isFollowingPlayer;
     void Update()
     {
-        if(PlayerController.instance != null)
+        if(PlayerController.instance != null && !isFollowingPlayer)
         {
-            GameObject cameraTarget = GameObject.Find("Camera Target");
-//            Transform cameraTargetTransform = cameraTarget.GetComponent<Transform>();
+                isFollowingPlayer = true;
+                GameObject cameraTarget = GameObject.Find("Camera Target");
 
-            cinemachineFreeLook.Follow = PlayerController.instance.transform;
-            cinemachineFreeLook.LookAt = cameraTarget.transform;
+                cinemachineFreeLook.Follow = PlayerController.instance.transform;
+                cinemachineFreeLook.LookAt = cameraTarget.transform;
         }       
     }
 }
