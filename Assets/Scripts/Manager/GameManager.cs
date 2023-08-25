@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject deathEffect;
     [SerializeField] int currentCoins;
 
+
     private void Awake()
     {
         instance = this;

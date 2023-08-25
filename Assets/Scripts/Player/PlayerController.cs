@@ -74,7 +74,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
                 {
                     transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);
                     Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
-                    playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+                    playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, 
+                        rotateSpeed * Time.deltaTime);
                 }
 
                 velocity.y += gravity * Time.deltaTime;//Gravedad
@@ -108,7 +109,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         }
     }
 
-
+    //Retroceder al jugador cuando es golpeado
     public void KnockBack()
     {
         isKnocking = true;
